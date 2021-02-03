@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  error:
+    whitelabel.enabled: false
+    include-stacktrace: ALWAYS
+
+camel:
+  springboot:
+    name: "Camel Rest Sample Igor"
+  component:
+    servlet:
+      mapping:
+        enabled: true
+        context-path: /restws/*
+    http.enabled: true
+  dataformat:
+    json-jackson: 
+      include: NON_NULL
+      pretty-print: true
+      disable-features: FAIL_ON_EMPTY_BEANS        
+  language:
+    jsonpath:
+      enabled: true
+      trim: true
+      suppress-exceptions: true
